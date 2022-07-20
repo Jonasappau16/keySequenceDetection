@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js">
+</script>
+</head>
+
+<body style="background-color: rgb(0, 255, 255);">
+  
+  <h1><em>To add unicons and some fun stuff to the screen ....Click on the page and spell the name </em> <strong>JONAS!!</strong> </h1>
+  
+<script>
+  const pressed = [];
+  const secretCode = 'jonas';
+
+  window.addEventListener('keyup', (e) => {
+  console.log(e.key);//this is going to tell us the name/letter/number of the keys that the user has pressed (after they have clicked on the window)...
+  
+  pressed.push(e.key); 
+  
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  if (pressed.join('').includes(secretCode)) {
+    console.log('DING DING!');
+    cornify_add();
+  }
+  console.log(pressed);
+  })
+</script>
+</body>
+</html>
